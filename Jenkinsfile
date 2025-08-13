@@ -8,7 +8,7 @@ stages{
 stage('clone Repo')
   {
     steps{
-       git 'https://github.com/kamran761/DevOpsCodeDemo.git'     
+       git 'https://github.com/Sonal0409/DevOpsCodeDemo.git'     
     }
   }
 stage('Build Code')
@@ -21,9 +21,10 @@ stage('Build Code')
 stage('Deploy Code')
   {
     steps{
-      deploy adapters: [tomcat9(alternativeDeploymentContext: '', credentialsId: 'tomcatdetails', path: '', url: 'http://18.208.109.67:9090/')], contextPath: null, war: '**/*.war'
+      deploy adapters: [tomcat9(alternativeDeploymentContext: '', credentialsId: 'tomcatcredentials', path: '', url: 'http://3.90.164.56:8080/')], contextPath: null, war: '**/*.war'
     }
   }
 }
+
   
 }
